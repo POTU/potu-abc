@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using Unity.Linq;
 using Jalomieli.Debug;
 using Jalomieli.Extensions;
 using DG.Tweening;
@@ -10,6 +8,7 @@ public class SubUIMaster : MonoBehaviour
 	public GameObject startScreenSubUI;	
 	public GameObject gameplayScreenSubUI;
 	private Sequence startScreenSubUISequence;
+	private Sequence gameplayScreenSubUISequence;
 	void OnDestroy() {
 		Log.Warning("SubUIMaster should be destroyed ONLY on exit.");
 	}
@@ -57,16 +56,46 @@ public class SubUIMaster : MonoBehaviour
 			group.alpha = 0f;
 			startScreenSubUI.SetActive(false);
 		});
-		
 	}
 	public void ShowGameplayScreenSubUI() 
 	{
 		Log.Info("+++ Gameplay Sub UI");
+		if (gameplayScreenSubUISequence != null && gameplayScreenSubUISequence.IsPlaying()) {
+			gameplayScreenSubUISequence.Complete();
+		}
+		
+		var group = gameplayScreenSubUI.DemandComponent<CanvasGroup>();
+		group.interactable = true;
+		
+		gameplayScreenSubUISequence = DOTween.Sequence();
+		gameplayScreenSubUISequence.Append(DOTween.To(
+			() => group.alpha,
+			x => group.alpha = x,
+			1f,
+			2f
+		));
+		
 		gameplayScreenSubUI.SetActive(true);
 	}
 	public void HideGameplayScreenSubUI() 
 	{
 		Log.Info("--- Gameplay Sub UI");
-		gameplayScreenSubUI.SetActive(false);
+		if (gameplayScreenSubUISequence != null && gameplayScreenSubUISequence.IsPlaying()) {
+			gameplayScreenSubUISequence.Complete();
+		}
+		
+		var group = gameplayScreenSubUI.DemandComponent<CanvasGroup>();
+		group.interactable = false;
+		
+		gameplayScreenSubUISequence = DOTween.Sequence();
+		gameplayScreenSubUISequence.Append(DOTween.To(
+			() => group.alpha,
+			x => group.alpha = x,
+			0f,
+			0.5f
+		));
+		gameplayScreenSubUISequence.OnComplete(() => {
+			gameplayScreenSubUI.SetActive(false);
+		});
 	}
 }
