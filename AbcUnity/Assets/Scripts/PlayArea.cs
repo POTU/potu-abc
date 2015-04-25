@@ -24,7 +24,7 @@ public class PlayArea : MonoBehaviour
 	void OnTriggerExit2D(Collider2D other) 
 	{
 		ExecuteEvents.Execute<IDeathHandler>(
-			other.gameObject, 
+			other.gameObject.transform.parent.gameObject, 
 			null, 
 			(x, y) => x.OnDeath()
 		);

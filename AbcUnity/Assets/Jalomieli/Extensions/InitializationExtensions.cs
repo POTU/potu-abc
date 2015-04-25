@@ -44,6 +44,7 @@ namespace Jalomieli.Extensions
 			var go = (GameObject)Object.Instantiate(original);
 			go.name = original.name;
 			go.transform.parent = parent;
+            go.SetActive(true);
 			go.transform.localPosition = Vector3.zero;
 			go.transform.localRotation = Quaternion.identity;
 			go.transform.localScale = Vector3.one;
