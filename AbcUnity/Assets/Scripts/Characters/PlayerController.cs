@@ -23,6 +23,6 @@ public class PlayerController : MonoBehaviour
 	}
 	private Vector2 GetRightForce() 
 	{
-		return new Vector2(300f, 0);
+		return new Vector2(200f, 0);
 	}
 }
