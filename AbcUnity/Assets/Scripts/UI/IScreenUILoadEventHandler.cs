@@ -4,5 +4,5 @@ using UnityEngine.EventSystems;
 public interface IScreenUILoadEventHandler : IEventSystemHandler
 {
 	void OnLoad(GameObject uiRootGo);
-	void OnDestroy();
+	void OnUnload();
 }

@@ -7,4 +7,8 @@ public class PowerLevel : MonoBehaviour
 	{
 		return powerLevel;
 	}
+	public void IncreaseBy(int amount)
+	{
+		powerLevel += amount;
+	}
 }
