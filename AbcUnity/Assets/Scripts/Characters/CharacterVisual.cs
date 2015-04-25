@@ -14,7 +14,7 @@ public class CharacterVisual : MonoBehaviour, ICharacterChangeHandler
 	public void OnPowerLevelChange(Character character) 
 	{
 		var spriteRenderer = GetComponent<SpriteRenderer>();
-		var sprites = Resources.LoadAll<Sprite>("Sprites");
+		var sprites = Resources.LoadAll<Sprite>("Sprites/Alphabet1");
 		var findName = "aakkoset_" + character.PowerLevel.ToString();
 		var sprite = sprites.FirstOrDefault((s) => s.name == findName);
 		Assert.NotNull(sprite);
