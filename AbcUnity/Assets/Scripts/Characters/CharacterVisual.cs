@@ -19,9 +19,8 @@ public class CharacterVisual : MonoBehaviour, ICharacterChangeHandler
 	}
 	public void OnPowerLevelChange(Character character) 
 	{
-		var powerLevel = character.GetPowerLevel();
 		Color color;
-		powerLevelToColor.TryGetValue(powerLevel, out color);
+		powerLevelToColor.TryGetValue(character.PowerLevel, out color);
 		Assert.NotNull(color);
 		GetComponent<SpriteRenderer>().color = color;
 	}
