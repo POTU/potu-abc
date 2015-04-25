@@ -7,7 +7,7 @@ using System.Linq;
 public class CharacterVisual : MonoBehaviour, ICharacterChangeHandler
 {
 
-    public static List<GameObject> ImageColliders = new List<GameObject>(); 
+    public static List<GameObject> ImageColliders = new List<GameObject>();
 
 	void Start()
 	{

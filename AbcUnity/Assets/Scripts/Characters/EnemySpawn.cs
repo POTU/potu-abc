@@ -22,10 +22,12 @@ public class EnemySpawn : MonoBehaviour {
         Enemies = GameObject.Find("Enemies");
         Enemy = (GameObject)Resources.Load("Enemies/EnemyCharacter");
 
-        CharacterVisual.ImageColliders.Clear();
-        for(int i = transform.childCount - 1; i > 0; i--)
+        if (CharacterVisual.ImageColliders.Count == 0)
         {
-            CharacterVisual.ImageColliders.Add(transform.GetChild(i).gameObject);
+            for (int i = transform.childCount - 1; i >= 0; i--)
+            {
+                CharacterVisual.ImageColliders.Add(transform.GetChild(i).gameObject);
+            }
         }
 
 
