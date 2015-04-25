@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public class PowerLevel : MonoBehaviour 
+public class Character : MonoBehaviour 
 {
 	public int powerLevel;
 	public int GetPowerLevel()
 	{
 		return powerLevel;
 	}
-	public void IncreaseBy(int amount)
+	public void IncreasePowerLevelBy(int amount)
 	{
 		powerLevel += amount;
 	}

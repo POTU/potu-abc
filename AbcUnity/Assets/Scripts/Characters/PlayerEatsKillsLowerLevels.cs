@@ -6,25 +6,23 @@ public class PlayerEatsKillsLowerLevels : MonoBehaviour
 {
 	void OnCollisionEnter2D(Collision2D other) 
 	{
-		var enemyPowerLevel = other.gameObject.GetComponent<PowerLevel>();
-		if (enemyPowerLevel != null) 
+		var enemy = other.gameObject.GetComponent<Character>();
+		if (enemy != null) 
 		{
-			var enemyLevel = enemyPowerLevel.GetPowerLevel();
-			var playerPowerLevel = this.gameObject.DemandComponent<PowerLevel>();
-			var playerLevel = playerPowerLevel.GetPowerLevel();
-			if (playerLevel >= enemyLevel)
+			var player = this.gameObject.DemandComponent<Character>();
+			if (player.GetPowerLevel() >= enemy.GetPowerLevel())
 			{
 				ExecuteEvents.Execute<IDeathHandler>(
-					other.gameObject, 
+					enemy.gameObject, 
 					null, 
 					(x, y) => x.OnDeath()
 				);
-				playerPowerLevel.IncreaseBy(1);
+				player.IncreasePowerLevelBy(1);
 			}
 			else 
 			{
 				ExecuteEvents.Execute<IDeathHandler>(
-					this.gameObject, 
+					player.gameObject, 
 					null, 
 					(x, y) => x.OnDeath()
 				);
