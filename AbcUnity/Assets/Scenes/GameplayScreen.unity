@@ -103,7 +103,7 @@ GameObject:
   - 114: {fileID: 360066439}
   m_Layer: 0
   m_Name: EnemyCharacter
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   - 114: {fileID: 366523254}
   m_Layer: 0
   m_Name: EnemyCharacter
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,7 +449,7 @@ GameObject:
   - 114: {fileID: 525719541}
   m_Layer: 0
   m_Name: EnemyCharacter
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -778,7 +778,7 @@ GameObject:
   - 114: {fileID: 1615719664}
   m_Layer: 0
   m_Name: EnemyCharacter
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
