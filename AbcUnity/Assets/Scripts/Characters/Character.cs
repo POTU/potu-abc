@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Character : MonoBehaviour 
 {
@@ -10,5 +11,10 @@ public class Character : MonoBehaviour
 	public void IncreasePowerLevelBy(int amount)
 	{
 		powerLevel += amount;
+		ExecuteEvents.Execute<ICharacterChangeHandler>(
+			this.gameObject, 
+			null, 
+			(x, y) => x.OnPowerLevelChange(this)
+		);
 	}
 }
