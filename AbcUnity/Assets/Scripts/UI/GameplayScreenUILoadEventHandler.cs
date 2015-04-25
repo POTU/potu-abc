@@ -13,11 +13,19 @@ public class GameplayScreenUILoadEventHandler : MonoBehaviour, IScreenUILoadEven
 		this.uiRootGo = uiRoot;
 		var master = this.uiRootGo.DemandComponent<SubUIMaster>();
 		master.ShowGameplayScreenSubUI();
+		if (master.IsEndScreenSubUIShow)
+		{
+			master.HideEndScreenSubUI();
+		}
 	}
 	public void OnUnload()
 	{
 		if (this.uiRootGo == null) { return; }
 		var master = this.uiRootGo.DemandComponent<SubUIMaster>();
 		master.HideGameplayScreenSubUI();
+		if (master.IsEndScreenSubUIShow)
+		{
+			master.HideEndScreenSubUI();
+		}
 	}
 }

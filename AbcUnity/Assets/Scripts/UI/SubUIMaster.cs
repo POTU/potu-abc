@@ -7,8 +7,13 @@ public class SubUIMaster : MonoBehaviour
 {
 	public GameObject startScreenSubUI;	
 	public GameObject gameplayScreenSubUI;
+	public GameObject endScreenSubUI;
 	private Sequence startScreenSubUISequence;
 	private Sequence gameplayScreenSubUISequence;
+	private Sequence endScreenSubUISequence;
+	public bool IsStartScreenSubUIShow { get; private set; }
+	public bool IsGameplayScreenSubUIShow { get; private set; }
+	public bool IsEndScreenSubUIShow { get; private set; }
 	void OnDestroy() {
 		Log.Warning("SubUIMaster should be destroyed ONLY on exit.");
 	}
@@ -34,6 +39,7 @@ public class SubUIMaster : MonoBehaviour
 		});
 		
 		startScreenSubUI.SetActive(true);
+		IsStartScreenSubUIShow = true;
 	}
 	public void HideStartScreenSubUI() 
 	{
@@ -56,6 +62,7 @@ public class SubUIMaster : MonoBehaviour
 			group.alpha = 0f;
 			startScreenSubUI.SetActive(false);
 		});
+		IsStartScreenSubUIShow = false;
 	}
 	public void ShowGameplayScreenSubUI() 
 	{
@@ -76,6 +83,7 @@ public class SubUIMaster : MonoBehaviour
 		));
 		
 		gameplayScreenSubUI.SetActive(true);
+		IsGameplayScreenSubUIShow = true;
 	}
 	public void HideGameplayScreenSubUI() 
 	{
@@ -84,18 +92,19 @@ public class SubUIMaster : MonoBehaviour
 			gameplayScreenSubUISequence.Complete();
 		}
 		
-		var group = gameplayScreenSubUI.DemandComponent<CanvasGroup>();
-		group.interactable = false;
-		
-		gameplayScreenSubUISequence = DOTween.Sequence();
-		gameplayScreenSubUISequence.Append(DOTween.To(
-			() => group.alpha,
-			x => group.alpha = x,
-			0f,
-			0.5f
-		));
-		gameplayScreenSubUISequence.OnComplete(() => {
-			gameplayScreenSubUI.SetActive(false);
-		});
+		gameplayScreenSubUI.SetActive(false);
+		IsGameplayScreenSubUIShow = false;
+	}
+	public void ShowEndScreenSubUI() 
+	{
+		Log.Info("+++ End Sub UI");		
+		endScreenSubUI.SetActive(true);
+		IsEndScreenSubUIShow = true;
+	}
+	public void HideEndScreenSubUI() 
+	{
+		Log.Info("--- End Sub UI");
+		endScreenSubUI.SetActive(false);
+		IsEndScreenSubUIShow = false;
 	}
 }
