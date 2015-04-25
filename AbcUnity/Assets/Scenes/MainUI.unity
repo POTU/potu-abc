@@ -163,6 +163,7 @@ GameObject:
   - 114: {fileID: 202175300}
   - 114: {fileID: 202175299}
   - 114: {fileID: 202175301}
+  - 225: {fileID: 202175303}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -279,6 +280,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 202175297}
+--- !u!225 &202175303
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 202175297}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &439770736
 GameObject:
   m_ObjectHideFlags: 0
