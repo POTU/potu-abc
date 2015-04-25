@@ -22,12 +22,10 @@ public class EnemySpawn : MonoBehaviour {
         Enemies = GameObject.Find("Enemies");
         Enemy = (GameObject)Resources.Load("Enemies/EnemyCharacter");
         CharacterVisual.ImageColliders.Clear();
-            for (int i = transform.childCount - 1; i >= 0; i--)
-            {
-                CharacterVisual.ImageColliders.Add(transform.GetChild(i).gameObject);
-            }
-
-
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            CharacterVisual.ImageColliders.Add(transform.GetChild(i).gameObject);
+        }
         SpawnInterval = 1.5f;
         StartCoroutine(SpawnEnemies());
 	}
@@ -49,7 +47,7 @@ public class EnemySpawn : MonoBehaviour {
         int RandomLevel = 0;
         float RandomPercentage = Random.Range(0, 100);
         
-        if(RandomPercentage > ChanceToSpawnSmaller)
+        if (RandomPercentage > ChanceToSpawnSmaller)
         { 
             RandomLevel = Random.Range(PlayerCharacter.PowerLevel, 25);
         }
