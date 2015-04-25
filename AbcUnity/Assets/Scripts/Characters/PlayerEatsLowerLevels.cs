@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using Jalomieli.Extensions;
 
-public class PlayerEatsKillsLowerLevels : MonoBehaviour 
+public class PlayerEatsLowerLevels : MonoBehaviour 
 {
 	void OnCollisionEnter2D(Collision2D other) 
 	{

@@ -100,6 +100,7 @@ GameObject:
   - 50: {fileID: 360066441}
   - 114: {fileID: 360066440}
   - 114: {fileID: 360066435}
+  - 114: {fileID: 360066439}
   m_Layer: 0
   m_Name: EnemyCharacter
   m_TagString: Player
@@ -157,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd588179f9f1a40a78a669f0fcf05734, type: 3}
-  m_Color: {r: 0, g: 1, b: .00689649582, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &360066438
 Transform:
   m_ObjectHideFlags: 0
@@ -170,6 +171,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 517639022}
   m_RootOrder: 1
+--- !u!114 &360066439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360066434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966055d15b11d4c98b4cef4d290b095d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &360066440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +221,7 @@ GameObject:
   - 50: {fileID: 366523256}
   - 114: {fileID: 366523255}
   - 114: {fileID: 366523251}
+  - 114: {fileID: 366523254}
   m_Layer: 0
   m_Name: EnemyCharacter
   m_TagString: Player
@@ -278,7 +291,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd588179f9f1a40a78a669f0fcf05734, type: 3}
-  m_Color: {r: 0, g: .0896549225, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &366523254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366523249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966055d15b11d4c98b4cef4d290b095d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &366523255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +446,7 @@ GameObject:
   - 50: {fileID: 525719543}
   - 114: {fileID: 525719542}
   - 114: {fileID: 525719540}
+  - 114: {fileID: 525719541}
   m_Layer: 0
   m_Name: EnemyCharacter
   m_TagString: Player
@@ -467,7 +492,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd588179f9f1a40a78a669f0fcf05734, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &525719539
 Transform:
   m_ObjectHideFlags: 0
@@ -492,6 +517,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerLevel: 2
+--- !u!114 &525719541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 525719536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966055d15b11d4c98b4cef4d290b095d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &525719542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +775,7 @@ GameObject:
   - 50: {fileID: 1615719666}
   - 114: {fileID: 1615719665}
   - 114: {fileID: 1615719661}
+  - 114: {fileID: 1615719664}
   m_Layer: 0
   m_Name: EnemyCharacter
   m_TagString: Player
@@ -808,7 +845,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd588179f9f1a40a78a669f0fcf05734, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1615719664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1615719659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966055d15b11d4c98b4cef4d290b095d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1615719665
 MonoBehaviour:
   m_ObjectHideFlags: 0
