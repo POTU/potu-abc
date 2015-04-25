@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
+using Jalomieli.Extensions;
 
 public class ParticleAutoDestroy : MonoBehaviour 
 {
-	private ParticleSystem particleSystem;	
+	private ParticleSystem particleSys;	
 	public void Start() 
 	{
-		particleSystem = GetComponent<ParticleSystem>();
+		particleSys = this.gameObject.DemandComponent<ParticleSystem>();
 	}
 	public void Update() 
 	{
-		if (particleSystem)
+		if (particleSys)
 		{
-			if (!particleSystem.IsAlive())
+			if (!particleSys.IsAlive())
 			{
 				Destroy(gameObject);
 			}
