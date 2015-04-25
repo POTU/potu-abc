@@ -21,14 +21,11 @@ public class EnemySpawn : MonoBehaviour {
         PlayerCharacter = Player.DemandComponent<Character>();
         Enemies = GameObject.Find("Enemies");
         Enemy = (GameObject)Resources.Load("Enemies/EnemyCharacter");
-
-        if (CharacterVisual.ImageColliders.Count == 0)
-        {
+        CharacterVisual.ImageColliders.Clear();
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
                 CharacterVisual.ImageColliders.Add(transform.GetChild(i).gameObject);
             }
-        }
 
 
         SpawnInterval = 1.5f;
