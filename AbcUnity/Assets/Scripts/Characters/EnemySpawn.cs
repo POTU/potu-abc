@@ -14,7 +14,6 @@ public class EnemySpawn : MonoBehaviour {
     GameObject Player;
     Character PlayerCharacter;
 
-	// Use this for initialization
 	void Awake ()
     {
         Player = GameObject.FindWithTag("Player");
