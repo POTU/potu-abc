@@ -18,6 +18,5 @@ public class ElementScaler : MonoBehaviour {
         float ReferenceRatio = 2048f / 1536f;
         float DifferenceRatio = CurrentRatio / ReferenceRatio;
         transform.localScale = new Vector2(transform.localScale.x * DifferenceRatio, transform.localScale.y);
-        print(DifferenceRatio);
     }
 }
