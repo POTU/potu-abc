@@ -8,5 +8,6 @@ public class PlayerDeath : MonoBehaviour, IDeathHandler
 		var go = GameObject.FindGameObjectsWithTag("MainUIRoot").FirstOrDefault();
 		var master = go.GetComponent<SubUIMaster>();
 		master.ShowEndScreenSubUI();
+		AudioSystem.Get().PlayPlayerDeath();
 	}
 }

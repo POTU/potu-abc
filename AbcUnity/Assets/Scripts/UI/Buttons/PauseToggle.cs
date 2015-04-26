@@ -19,6 +19,7 @@ public class PauseToggle : MonoBehaviour {
 	
     public void Pause(bool Pause)
     {
+		AudioSystem.Get().PlayUI();
         if (Pause)
         {
             Time.timeScale = 0;
