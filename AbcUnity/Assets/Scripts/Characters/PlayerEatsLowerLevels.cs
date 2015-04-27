@@ -22,6 +22,16 @@ public class PlayerEatsLowerLevels : MonoBehaviour
 				var go = Resources.Load<GameObject>("Particle Effects/SmokeBuff");
 				go.Create(enemy.gameObject.transform.position, Quaternion.identity);
 				AudioSystem.Get().PlayBuff();
+
+			    var maxPowerLevel = 25;
+			    if (player.PowerLevel >= maxPowerLevel)
+			    {
+                    ExecuteEvents.Execute<IDeathHandler>(
+                        player.gameObject,
+                        null,
+                        (x, y) => x.OnDeath()
+                    );
+			    }
 			}
 			else 
 			{
