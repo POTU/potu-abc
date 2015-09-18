@@ -13,7 +13,7 @@ public class PowerUp  {
 
     private float duration;
 
-    private float timer = 0f;
+    protected float timer = 0f;
 
     private int commonness;
 
@@ -33,9 +33,6 @@ public class PowerUp  {
 
     static PowerUp()
     {
-        PowerUp pu = new PowerUp("Wrap", 10.0f, 1);
-        pu.name = "wrap";
-
         GodmodePU GodMode = new GodmodePU("GodMode", 20f, 2);
         GodMode.name = "GodMode";
     }
@@ -73,6 +70,7 @@ public class PowerUp  {
 
     public virtual void StartEffect()
     {
+        timer = 0.0f;
         Debug.Log("Base");
     }
 
