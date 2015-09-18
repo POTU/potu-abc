@@ -17,8 +17,16 @@ public class Character : MonoBehaviour
 			);
 		}
 	}
+
+    public PowerUp PowerUp;
+
 	public void IncreasePowerLevelBy(int amount)
 	{
 		PowerLevel += amount;
 	}
+
+    void Update()
+    {
+        if (PowerUp != null) PowerUp.Update();
+    }
 }

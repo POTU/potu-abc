@@ -9,6 +9,7 @@ public class EnemySpawn : MonoBehaviour {
     float SpawnInterval;
 
     public float ChanceToSpawnSmaller = 40;
+    public float ChanceToSpawnPowerUp = 5;
 
     bool Spawning;
     GameObject Player;
@@ -45,17 +46,29 @@ public class EnemySpawn : MonoBehaviour {
         GameObject CurrentEnemy = Enemy.Create(SpawnPosition, Quaternion.identity);
         int RandomLevel = 0;
         float RandomPercentage = Random.Range(0, 100);
-        
-        if (RandomPercentage > ChanceToSpawnSmaller)
-        { 
-            RandomLevel = Random.Range(PlayerCharacter.PowerLevel, 25);
+
+        PowerUp powerUp = null;
+
+        if (RandomPercentage < ChanceToSpawnSmaller)
+        {
+            powerUp = PowerUp.GetRandom();
         }
         else
         {
-            RandomLevel = Random.Range(0, PlayerCharacter.PowerLevel);
+            if (RandomPercentage > ChanceToSpawnSmaller)
+            {
+                RandomLevel = Random.Range(PlayerCharacter.PowerLevel, 25);
+            }
+            else
+            {
+                RandomLevel = Random.Range(0, PlayerCharacter.PowerLevel);
+            }
         }
-        
-        CurrentEnemy.DemandComponent<Character>().PowerLevel = RandomLevel;
+
+        var character = CurrentEnemy.DemandComponent<Character>();
+        character.PowerLevel = RandomLevel;
+        character.PowerUp = powerUp;
+
         CurrentEnemy.transform.parent = Enemies.transform;
     }
 }
