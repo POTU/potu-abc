@@ -52,6 +52,7 @@ public class EnemySpawn : MonoBehaviour {
         if (RandomPercentage < ChanceToSpawnSmaller)
         {
             powerUp = PowerUp.GetRandom();
+            RandomLevel = 0;
         }
         else
         {

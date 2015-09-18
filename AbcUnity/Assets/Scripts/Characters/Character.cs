@@ -23,10 +23,5 @@ public class Character : MonoBehaviour
 	public void IncreasePowerLevelBy(int amount)
 	{
 		PowerLevel += amount;
-	}
-
-    void Update()
-    {
-        if (PowerUp != null) PowerUp.Update();
-    }
+	}    
 }

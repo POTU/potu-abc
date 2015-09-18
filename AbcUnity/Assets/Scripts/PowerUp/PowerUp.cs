@@ -52,7 +52,7 @@ public class PowerUp  {
         return selectedPowerUp;
     }
 
-    public virtual void Update()
+    public virtual void Update(GameObject targetObject)
     {
     }
 }

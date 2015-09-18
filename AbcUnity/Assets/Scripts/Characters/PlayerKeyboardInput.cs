@@ -19,5 +19,5 @@ public class PlayerKeyboardInput : MonoBehaviour
 		{
 			controller.MoveRightAction();
 		}
-	}
+    }
 }

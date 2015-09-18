@@ -18,6 +18,12 @@ public class PlayerEatsLowerLevels : MonoBehaviour
 					(x, y) => x.OnDeath()
 				);
 				player.IncreasePowerLevelBy(1);
+
+                if (enemy.PowerUp!=null)
+                {
+                    var playerController = this.gameObject.GetComponent<PlayerController>();
+                    playerController.ActivePowerUps.Add(enemy.PowerUp);
+                }
 				
 				var go = Resources.Load<GameObject>("Particle Effects/SmokeBuff");
 				go.Create(enemy.gameObject.transform.position, Quaternion.identity);
