@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour {
     float SpawnInterval;
 
     public float ChanceToSpawnSmaller = 40;
-    public float ChanceToSpawnPowerUp = 2;
+    public float ChanceToSpawnPowerUp = 5;
 
     bool Spawning;
     GameObject Player;
@@ -49,7 +49,7 @@ public class EnemySpawn : MonoBehaviour {
 
         PowerUp powerUp = null;
 
-        if (RandomPercentage < ChanceToSpawnSmaller || Input.GetKey(KeyCode.P))
+        if (RandomPercentage < ChanceToSpawnPowerUp || Input.GetKey(KeyCode.P))
         {
             powerUp = PowerUp.GetRandom();
             RandomLevel = PowerUp.PowerUpLevel;
