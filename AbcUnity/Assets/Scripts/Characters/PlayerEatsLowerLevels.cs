@@ -10,7 +10,8 @@ public class PlayerEatsLowerLevels : MonoBehaviour
 		if (enemy != null) 
 		{
 			var player = this.gameObject.DemandComponent<Character>();
-			if (player.PowerLevel >= enemy.PowerLevel || PlayerController.GodMode)
+
+			if (player.PowerLevel >= enemy.PowerLevel || enemy.PowerLevel == PowerUp.PowerUpLevel || PlayerController.GodMode)
 			{
 				ExecuteEvents.Execute<IDeathHandler>(
 					enemy.gameObject, 
