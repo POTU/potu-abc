@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PowerUp  {  
-    
+public class PowerUp  {
+
+    public static int PowerUpLevel = 26;
     private static List<PowerUp> list = new List<PowerUp>();
 
     private static int totalCommonness;

@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour {
     float SpawnInterval;
 
     public float ChanceToSpawnSmaller = 40;
-    public float ChanceToSpawnPowerUp = 5;
+    public float ChanceToSpawnPowerUp = 2;
 
     bool Spawning;
     GameObject Player;
@@ -52,7 +52,7 @@ public class EnemySpawn : MonoBehaviour {
         if (RandomPercentage < ChanceToSpawnSmaller)
         {
             powerUp = PowerUp.GetRandom();
-            RandomLevel = 0;
+            RandomLevel = PowerUp.PowerUpLevel;
         }
         else
         {
