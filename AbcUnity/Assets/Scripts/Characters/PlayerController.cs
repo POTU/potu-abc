@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public List<PowerUp> ActivePowerUps;
 
+    public static bool GodMode;
+
 	private Rigidbody2D playerRigidbody2D;
 	void Awake() 
 	{
@@ -15,9 +17,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        foreach (PowerUp powerUp in ActivePowerUps)
+        for (int i = 0; i < ActivePowerUps.Count; i++)
         {
-            powerUp.Update(gameObject);
+            ActivePowerUps[i].Update(this);
         }
     }
 

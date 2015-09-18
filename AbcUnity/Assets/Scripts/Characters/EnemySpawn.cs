@@ -49,7 +49,7 @@ public class EnemySpawn : MonoBehaviour {
 
         PowerUp powerUp = null;
 
-        if (RandomPercentage < ChanceToSpawnSmaller)
+        if (RandomPercentage < ChanceToSpawnSmaller || Input.GetKey(KeyCode.P))
         {
             powerUp = PowerUp.GetRandom();
             RandomLevel = 0;

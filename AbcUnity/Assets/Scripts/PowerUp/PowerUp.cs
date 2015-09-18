@@ -8,13 +8,15 @@ public class PowerUp  {
 
     private static int totalCommonness;
 
-    private string name;
+    public string name;
 
     private float duration;
 
-    private float timer;
+    private float timer = 0f;
 
     private int commonness;
+
+    public PowerUp(){ }
     
     public PowerUp(string name, float duration, int commonness)
     {
@@ -22,6 +24,7 @@ public class PowerUp  {
         totalCommonness += commonness;
 
         this.name = name;
+        this.duration = duration;
         this.commonness = commonness;
 
         list.Add(this);
@@ -31,6 +34,9 @@ public class PowerUp  {
     {
         PowerUp pu = new PowerUp("Wrap", 10.0f, 1);
         pu.name = "wrap";
+
+        GodmodePU GodMode = new GodmodePU("GodMode", 20f, 2);
+        GodMode.name = "GodMode";
     }
 
     public static PowerUp GetRandom()
@@ -52,7 +58,25 @@ public class PowerUp  {
         return selectedPowerUp;
     }
 
-    public virtual void Update(GameObject targetObject)
+    public virtual void Update(PlayerController targetObject)
     {
+        if (duration > timer)
+        {
+            timer += Time.deltaTime;
+            return;
+        }
+
+        EndEffect();
+        targetObject.ActivePowerUps.Remove(this);
+    }
+
+    public virtual void StartEffect()
+    {
+        Debug.Log("Base");
+    }
+
+    public virtual void EndEffect()
+    {
+
     }
 }

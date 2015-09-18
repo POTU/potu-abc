@@ -10,7 +10,7 @@ public class PlayerEatsLowerLevels : MonoBehaviour
 		if (enemy != null) 
 		{
 			var player = this.gameObject.DemandComponent<Character>();
-			if (player.PowerLevel >= enemy.PowerLevel)
+			if (player.PowerLevel >= enemy.PowerLevel || PlayerController.GodMode)
 			{
 				ExecuteEvents.Execute<IDeathHandler>(
 					enemy.gameObject, 
@@ -22,7 +22,9 @@ public class PlayerEatsLowerLevels : MonoBehaviour
                 if (enemy.PowerUp!=null)
                 {
                     var playerController = this.gameObject.GetComponent<PlayerController>();
+   
                     playerController.ActivePowerUps.Add(enemy.PowerUp);
+                    enemy.PowerUp.StartEffect();
                 }
 				
 				var go = Resources.Load<GameObject>("Particle Effects/SmokeBuff");
