@@ -11,7 +11,7 @@ public class PowerUp  {
 
     private static int totalCommonness;
 
-    public string name;
+    private string name;
 
     private float duration;
 
@@ -28,7 +28,6 @@ public class PowerUp  {
 
         this.name = name;
         this.duration = duration;
-        this.commonness = commonness;
 
         this.id = id;
 
@@ -37,8 +36,9 @@ public class PowerUp  {
 
     static PowerUp()
     {
-        GodmodePU GodMode = new GodmodePU("GodMode", 5f, 2, 0);
-        GodMode.name = "GodMode";
+        GodmodePU GodMode = new GodmodePU("GodMode", 5f, 1, 0);
+
+        FlipAxisPU FlipAxis = new FlipAxisPU("FlipAxis", 10f, 2, 1);
     }
 
     public static PowerUp GetRandom()

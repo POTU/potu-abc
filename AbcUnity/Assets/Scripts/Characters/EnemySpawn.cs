@@ -11,6 +11,8 @@ public class EnemySpawn : MonoBehaviour {
     public float ChanceToSpawnSmaller = 40;
     public float ChanceToSpawnPowerUp = 5;
 
+    public static bool FlipAxis = false;
+
     bool Spawning;
     GameObject Player;
     Character PlayerCharacter;
@@ -71,5 +73,6 @@ public class EnemySpawn : MonoBehaviour {
         character.PowerUp = powerUp;
 
         CurrentEnemy.transform.parent = Enemies.transform;
+        if (FlipAxis) CurrentEnemy.transform.eulerAngles = new Vector3(0, 180, 0);
     }
 }

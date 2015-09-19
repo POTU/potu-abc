@@ -1123,8 +1123,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d1c918b2cd23a1d45b7a368721b7e966, type: 3}
   PowerUpSounds:
   - {fileID: 8300000, guid: bed63840859a27144aa9bacdcfcf810f, type: 3}
-  - {fileID: 8300000, guid: 83e580f3651d2b44799e55e2f633ed27, type: 3}
   - {fileID: 8300000, guid: cd5d4d392e34eb947b4e0bc7d6bf9e78, type: 3}
+  - {fileID: 8300000, guid: 83e580f3651d2b44799e55e2f633ed27, type: 3}
   - {fileID: 8300000, guid: ff5c5bcf9650b3d48b8b524b951ad249, type: 3}
   - {fileID: 8300000, guid: a9a3608063af87f42864d690b4ad24c0, type: 3}
   - {fileID: 0}
