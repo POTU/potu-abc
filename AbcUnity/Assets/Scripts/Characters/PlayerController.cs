@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
 
     public static bool GodMode;
 
+    public SpriteRenderer spriteRenderer;
+
 	private Rigidbody2D playerRigidbody2D;
 	void Awake() 
 	{
         ActivePowerUps = new List<PowerUp>();
 		playerRigidbody2D = this.gameObject.DemandComponent<Rigidbody2D>();
+        spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
 	}
 
     void Update()

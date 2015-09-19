@@ -12,9 +12,26 @@ public class GodmodePU : PowerUp {
         PlayerController.GodMode = true;
     }
 
-    public override void EndEffect()
+    public override void EndEffect(PlayerController targetObject)
     {
         Debug.Log("GODMODE--");
+        if (targetObject.spriteRenderer == null)
+        {
+            targetObject.spriteRenderer = targetObject.GetComponentInChildren<SpriteRenderer>();
+        }
+        Color newColor = new Color(1f, 1f, 1f, 1.0f);
+        targetObject.spriteRenderer.color = newColor;
         PlayerController.GodMode = false;
+    }
+
+    public override void Update(PlayerController targetObject)
+    {
+        if (targetObject.spriteRenderer == null)
+        {
+            targetObject.spriteRenderer = targetObject.GetComponentInChildren<SpriteRenderer>();
+        }
+        Color newColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+        targetObject.spriteRenderer.color = newColor;
+        base.Update(targetObject);
     }
 }

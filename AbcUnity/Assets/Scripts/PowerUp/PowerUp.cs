@@ -33,7 +33,7 @@ public class PowerUp  {
 
     static PowerUp()
     {
-        GodmodePU GodMode = new GodmodePU("GodMode", 20f, 2);
+        GodmodePU GodMode = new GodmodePU("GodMode", 5f, 2);
         GodMode.name = "GodMode";
     }
 
@@ -64,7 +64,7 @@ public class PowerUp  {
             return;
         }
 
-        EndEffect();
+        EndEffect(targetObject);
         targetObject.ActivePowerUps.Remove(this);
     }
 
@@ -74,7 +74,7 @@ public class PowerUp  {
         Debug.Log("Base");
     }
 
-    public virtual void EndEffect()
+    public virtual void EndEffect(PlayerController targetObject)
     {
 
     }
