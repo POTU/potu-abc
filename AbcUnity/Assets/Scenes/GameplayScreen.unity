@@ -964,6 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
+  originalColor: {r: .607843161, g: .607843161, b: 1, a: 1}
 --- !u!114 &857670351
 MonoBehaviour:
   m_ObjectHideFlags: 0

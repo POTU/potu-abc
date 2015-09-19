@@ -4,10 +4,14 @@ using System.Collections;
 public class GodmodePU : PowerUp {
 
     public GodmodePU(string name, float duration, int commonness, int id) : base( name, duration, commonness, id) { }
+
+    private int KillCount;
     
     public override void StartEffect()
     {
         timer = 0.0f;
+        PlayerController.GodModeKills = 0;
+        KillCount = 3;
         Debug.Log("GODMODE++");
         PlayerController.GodMode = true;
     }
@@ -15,12 +19,13 @@ public class GodmodePU : PowerUp {
     public override void EndEffect(PlayerController targetObject)
     {
         Debug.Log("GODMODE--");
-        if (targetObject.spriteRenderer == null)
+
+        if(targetObject.spriteRenderer == null)
         {
             targetObject.spriteRenderer = targetObject.GetComponentInChildren<SpriteRenderer>();
         }
-        Color newColor = new Color(1f, 1f, 1f, 1.0f);
-        targetObject.spriteRenderer.color = newColor;
+
+        targetObject.spriteRenderer.color = targetObject.originalColor;
         PlayerController.GodMode = false;
     }
 
@@ -32,6 +37,11 @@ public class GodmodePU : PowerUp {
         }
         Color newColor = new Color(Random.value, Random.value, Random.value, 1.0f);
         targetObject.spriteRenderer.color = newColor;
-        base.Update(targetObject);
+        
+        if(PlayerController.GodModeKills >= KillCount)
+        {
+            targetObject.ActivePowerUps.Remove(this);
+            EndEffect(targetObject);
+        }
     }
 }

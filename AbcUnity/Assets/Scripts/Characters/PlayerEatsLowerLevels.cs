@@ -20,6 +20,11 @@ public class PlayerEatsLowerLevels : MonoBehaviour
 				);
 				player.IncreasePowerLevelBy(1);
 
+                if(PlayerController.GodMode)
+                {
+                    PlayerController.GodModeKills++;
+                }
+
                 if (enemy.PowerUp != null)
                 {
                     var playerController = this.gameObject.GetComponent<PlayerController>();
