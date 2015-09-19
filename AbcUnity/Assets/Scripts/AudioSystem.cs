@@ -21,9 +21,16 @@ public class AudioSystem : MonoBehaviour
     public GameObject enemyDeathSound;
     public GameObject powerUpSound;
 
+    public List<AudioClip> LevelMusics = new List<AudioClip>();
+
     public List<AudioClip> EnemyDeathSounds = new List<AudioClip>();
     public List<AudioClip> PowerUpSounds = new List<AudioClip>();
-    
+
+    public void PlayMusic(int Index)
+    {
+        musicSource.clip = LevelMusics[Index];
+        musicSource.Play();
+    }
 	
 	public void PlayBuff()
 	{
@@ -39,7 +46,6 @@ public class AudioSystem : MonoBehaviour
 
     public void PlayEnemyDeath(int PowerLevel)
     {
-        print(PowerLevel);
         enemyDeathSound.GetComponent<AudioSource>().clip = EnemyDeathSounds[PowerLevel];
         enemyDeathSound.CreateAsChild(gameObject);
     }

@@ -1232,6 +1232,10 @@ MonoBehaviour:
   playerDeathSound: {fileID: 113560, guid: 88e3114b31927445c83293085eff636b, type: 2}
   enemyDeathSound: {fileID: 113560, guid: ff508b9f67b0de34799482c3cda4ae75, type: 2}
   powerUpSound: {fileID: 113560, guid: 771860ed2a1a0ab4a82c30afd4c6300a, type: 2}
+  LevelMusics:
+  - {fileID: 8300000, guid: 1ef56c73b4037470dac76840e2e6f92a, type: 3}
+  - {fileID: 8300000, guid: 39879feb020fa5040a79a2a5aae2a5fe, type: 3}
+  - {fileID: 8300000, guid: 619f2d4cb2d74fd40b457bd8c1863c85, type: 3}
   EnemyDeathSounds:
   - {fileID: 8300000, guid: 466f45677b009324db8cd4454dffca37, type: 3}
   - {fileID: 8300000, guid: e6d180621d5a8ad4baca7104b1ffb1b1, type: 3}
@@ -3132,9 +3136,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 1865598210}
+        m_MethodName: LoadMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
