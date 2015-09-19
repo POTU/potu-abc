@@ -14,6 +14,7 @@ public class FlipAxisPU : PowerUp {
 
     public override void EndEffect(PlayerController targetObject)
     {
+        base.EndEffect(targetObject);
         EnemySpawn.FlipAxis = false;
         Debug.Log("FLIPAXIS--");
     }

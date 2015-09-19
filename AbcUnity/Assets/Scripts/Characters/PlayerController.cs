@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController thisController;
 
-    public List<PowerUp> ActivePowerUps;
+    public static List<PowerUp> ActivePowerUps;
 
     public static bool GodMode;
     public static int GodModeKills;

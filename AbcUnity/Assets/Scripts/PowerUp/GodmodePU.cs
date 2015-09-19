@@ -18,6 +18,8 @@ public class GodmodePU : PowerUp {
 
     public override void EndEffect(PlayerController targetObject)
     {
+        base.EndEffect(targetObject);
+
         Debug.Log("GODMODE--");
 
         if(targetObject.spriteRenderer == null)
@@ -40,7 +42,7 @@ public class GodmodePU : PowerUp {
         
         if(PlayerController.GodModeKills >= KillCount)
         {
-            targetObject.ActivePowerUps.Remove(this);
+            PlayerController.ActivePowerUps.Remove(this);
             EndEffect(targetObject);
         }
     }

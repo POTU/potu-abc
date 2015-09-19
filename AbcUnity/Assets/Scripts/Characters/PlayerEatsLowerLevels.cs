@@ -29,7 +29,7 @@ public class PlayerEatsLowerLevels : MonoBehaviour
                 {
                     var playerController = this.gameObject.GetComponent<PlayerController>();
    
-                    playerController.ActivePowerUps.Add(enemy.PowerUp);
+                    PlayerController.ActivePowerUps.Add(enemy.PowerUp);
                     enemy.PowerUp.StartEffect();
                     AudioSystem.Get().PlayPowerUp(enemy.PowerUp.id);
                 }

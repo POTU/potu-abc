@@ -23,7 +23,9 @@ public class AudioSystem : MonoBehaviour
 
     public List<AudioClip> LevelMusics = new List<AudioClip>();
 
-    public List<AudioClip> EnemyDeathSounds = new List<AudioClip>();
+    public List<AudioClip> EnemyDeathSoundsL2 = new List<AudioClip>();
+    public List<AudioClip> EnemyDeathSoundsL3 = new List<AudioClip>();
+
     public List<AudioClip> PowerUpSounds = new List<AudioClip>();
 
     public void PlayMusic(int Index)
@@ -38,6 +40,20 @@ public class AudioSystem : MonoBehaviour
 		var src = go.GetComponent<AudioSource>();
 		src.pitch = Random.Range(0.5f, 1.5f);
 	}
+
+    public void PlayJigSaw(int PowerLevel)
+    {
+        enemyDeathSound.GetComponent<AudioSource>().clip = EnemyDeathSoundsL2[PowerLevel];
+        enemyDeathSound.GetComponent<AudioSource>().pitch = Random.Range(0.75f, 1.25f);
+        enemyDeathSound.CreateAsChild(gameObject);
+    }
+    	
+	public void PlayTypewriter()
+	{
+		enemyDeathSound.GetComponent<AudioSource>().clip = EnemyDeathSoundsL3[Random.Range(0, EnemyDeathSoundsL3.Count)];
+        enemyDeathSound.GetComponent<AudioSource>().pitch = Random.Range(0.5f, 1.5f);
+        enemyDeathSound.CreateAsChild(gameObject);
+	}
 	
 	public void PlayUI()
 	{
@@ -46,8 +62,25 @@ public class AudioSystem : MonoBehaviour
 
     public void PlayEnemyDeath(int PowerLevel)
     {
-        enemyDeathSound.GetComponent<AudioSource>().clip = EnemyDeathSounds[PowerLevel];
-        enemyDeathSound.CreateAsChild(gameObject);
+        int LevelNumber = PlayArea.LoadedLevel;
+
+        switch (LevelNumber)
+        {
+            case 1:
+                PlayBuff();
+                break;
+
+            case 2:
+                PlayJigSaw(PowerLevel);
+                break;
+
+            case 3:
+                PlayTypewriter();
+                break;
+
+            default:
+                break;
+        }
     }
 
     public void PlayPowerUp(int id)

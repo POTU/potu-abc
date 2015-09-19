@@ -1236,7 +1236,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1ef56c73b4037470dac76840e2e6f92a, type: 3}
   - {fileID: 8300000, guid: 39879feb020fa5040a79a2a5aae2a5fe, type: 3}
   - {fileID: 8300000, guid: 619f2d4cb2d74fd40b457bd8c1863c85, type: 3}
-  EnemyDeathSounds:
+  EnemyDeathSoundsL2:
   - {fileID: 8300000, guid: 466f45677b009324db8cd4454dffca37, type: 3}
   - {fileID: 8300000, guid: e6d180621d5a8ad4baca7104b1ffb1b1, type: 3}
   - {fileID: 8300000, guid: eb515e2a10e79664c844c822c6db6afd, type: 3}
@@ -1263,6 +1263,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b6032e9b5f4524641a60eaf2e945ca44, type: 3}
   - {fileID: 8300000, guid: 8e1a4855c184e924793e4918606cfb1a, type: 3}
   - {fileID: 8300000, guid: d1c918b2cd23a1d45b7a368721b7e966, type: 3}
+  EnemyDeathSoundsL3:
+  - {fileID: 8300000, guid: 28f11e69ee06a784dbab54b1a609f548, type: 3}
+  - {fileID: 8300000, guid: 620b2512d6ff7b6498bbf0a8d0eccf29, type: 3}
   PowerUpSounds:
   - {fileID: 8300000, guid: bed63840859a27144aa9bacdcfcf810f, type: 3}
   - {fileID: 8300000, guid: cd5d4d392e34eb947b4e0bc7d6bf9e78, type: 3}

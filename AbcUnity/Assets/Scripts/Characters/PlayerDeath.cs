@@ -7,6 +7,13 @@ public class PlayerDeath : MonoBehaviour, IDeathHandler
 {
 	public void OnDeath() 
 	{
+        EnemySpawn.FlipAxis = false;
+
+        for (int i = 0; i < PlayerController.ActivePowerUps.Count; i++)
+        {
+            PlayerController.ActivePowerUps[i].EndEffect(PlayerController.thisController);
+        }
+
 		var score = gameObject.GetComponent<Character>().PowerLevel;
 		Highscore hs;
 		if (JsonStorage.TryLoad("highscore.json", out hs))

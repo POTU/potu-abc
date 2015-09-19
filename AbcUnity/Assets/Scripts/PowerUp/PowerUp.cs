@@ -70,7 +70,6 @@ public class PowerUp  {
         }
 
         EndEffect(targetObject);
-        targetObject.ActivePowerUps.Remove(this);
     }
 
     public virtual void StartEffect()
@@ -81,6 +80,6 @@ public class PowerUp  {
 
     public virtual void EndEffect(PlayerController targetObject)
     {
-
+        PlayerController.ActivePowerUps.Remove(this);
     }
 }
