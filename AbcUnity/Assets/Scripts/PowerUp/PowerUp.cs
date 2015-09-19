@@ -7,9 +7,11 @@ public class PowerUp  {
     public static int PowerUpLevel = 26;
     private static List<PowerUp> list = new List<PowerUp>();
 
+    public int id;
+
     private static int totalCommonness;
 
-    public string name;
+    private string name;
 
     private float duration;
 
@@ -19,22 +21,24 @@ public class PowerUp  {
 
     public PowerUp(){ }
     
-    public PowerUp(string name, float duration, int commonness)
+    public PowerUp(string name, float duration, int commonness, int id)
     {
         this.commonness = commonness;
         totalCommonness += commonness;
 
         this.name = name;
         this.duration = duration;
-        this.commonness = commonness;
+
+        this.id = id;
 
         list.Add(this);
     }
 
     static PowerUp()
     {
-        GodmodePU GodMode = new GodmodePU("GodMode", 5f, 2);
-        GodMode.name = "GodMode";
+        GodmodePU GodMode = new GodmodePU("GodMode", 5f, 1, 0);
+
+        FlipAxisPU FlipAxis = new FlipAxisPU("FlipAxis", 10f, 2, 1);
     }
 
     public static PowerUp GetRandom()

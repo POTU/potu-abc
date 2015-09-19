@@ -20,17 +20,22 @@ public class PlayerEatsLowerLevels : MonoBehaviour
 				);
 				player.IncreasePowerLevelBy(1);
 
-                if (enemy.PowerUp!=null)
+                if (enemy.PowerUp != null)
                 {
                     var playerController = this.gameObject.GetComponent<PlayerController>();
    
                     playerController.ActivePowerUps.Add(enemy.PowerUp);
                     enemy.PowerUp.StartEffect();
+                    AudioSystem.Get().PlayPowerUp(enemy.PowerUp.id);
+                }
+                else
+                {
+                    AudioSystem.Get().PlayEnemyDeath(enemy.GetComponent<Character>().PowerLevel);
                 }
 				
 				var go = Resources.Load<GameObject>("Particle Effects/SmokeBuff");
 				go.Create(enemy.gameObject.transform.position, Quaternion.identity);
-				AudioSystem.Get().PlayBuff();
+
 
 			    var maxPowerLevel = 25;
 			    if (player.PowerLevel >= maxPowerLevel)

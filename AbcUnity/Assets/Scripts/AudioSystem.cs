@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using Jalomieli.Extensions;
 
 public class AudioSystem : MonoBehaviour 
@@ -17,6 +18,12 @@ public class AudioSystem : MonoBehaviour
 	public GameObject smokeBuffSound;
 	public GameObject uiSound;
 	public GameObject playerDeathSound;
+    public GameObject enemyDeathSound;
+    public GameObject powerUpSound;
+
+    public List<AudioClip> EnemyDeathSounds = new List<AudioClip>();
+    public List<AudioClip> PowerUpSounds = new List<AudioClip>();
+    
 	
 	public void PlayBuff()
 	{
@@ -29,6 +36,19 @@ public class AudioSystem : MonoBehaviour
 	{
 		uiSound.CreateAsChild(gameObject);
 	}
+
+    public void PlayEnemyDeath(int PowerLevel)
+    {
+        print(PowerLevel);
+        enemyDeathSound.GetComponent<AudioSource>().clip = EnemyDeathSounds[PowerLevel];
+        enemyDeathSound.CreateAsChild(gameObject);
+    }
+
+    public void PlayPowerUp(int id)
+    {
+        powerUpSound.GetComponent<AudioSource>().clip = PowerUpSounds[id];
+        powerUpSound.CreateAsChild(gameObject);
+    }
 	
 	public void PlayPlayerDeath()
 	{
