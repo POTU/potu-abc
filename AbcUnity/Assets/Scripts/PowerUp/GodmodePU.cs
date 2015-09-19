@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GodmodePU : PowerUp {
 
-    public GodmodePU(string name, float duration, int commonness) : base( name, duration, commonness) { }
+    public GodmodePU(string name, float duration, int commonness, int id) : base( name, duration, commonness, id) { }
     
     public override void StartEffect()
     {
