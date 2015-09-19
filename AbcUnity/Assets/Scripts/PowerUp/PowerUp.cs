@@ -36,9 +36,10 @@ public class PowerUp  {
 
     static PowerUp()
     {
-        GodmodePU GodMode = new GodmodePU("GodMode", 5f, 1, 0);
 
-        FlipAxisPU FlipAxis = new FlipAxisPU("FlipAxis", 10f, 2, 1);
+        FlipAxisPU FlipAxis = new FlipAxisPU("FlipAxis", 10f, 1, 1);
+        GodmodePU GodMode = new GodmodePU("GodMode", 5f, 2, 0);
+
     }
 
     public static PowerUp GetRandom()

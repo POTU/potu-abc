@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 using Jalomieli.Storage;
+using Jalomieli.Extensions;
 
 public class PlayerDeath : MonoBehaviour, IDeathHandler
 {
@@ -21,13 +22,13 @@ public class PlayerDeath : MonoBehaviour, IDeathHandler
 			hs.Score = score;
 			JsonStorage.Save("highscore.json", hs);
 		}
-	
-		var go = GameObject.FindGameObjectsWithTag("MainUIRoot").FirstOrDefault();
-		var master = go.GetComponent<SubUIMaster>();
-		master.ShowEndScreenSubUI();
+
+        var go = Resources.Load<GameObject>("Particle Effects/SmokeBuff");
+        go.Create(gameObject.transform.position, Quaternion.identity);
 		
 		AudioSystem.Get().PlayPlayerDeath();
-		
-		Destroy(gameObject);
+        PlayArea.thisArea.ShowEnd();
+
+        Destroy(gameObject);
 	}
 }

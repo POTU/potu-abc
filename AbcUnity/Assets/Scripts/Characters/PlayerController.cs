@@ -4,6 +4,16 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour 
 {
+    public Sprite Level1Sprite;
+    public Sprite Level2Sprite;
+    public Sprite Level3Sprite;
+
+    public Color Level1Color;
+    public Color Level2Color;
+    public Color Level3Color;
+
+    public static PlayerController thisController;
+
     public List<PowerUp> ActivePowerUps;
 
     public static bool GodMode;
@@ -20,8 +30,31 @@ public class PlayerController : MonoBehaviour
         GodModeKills = 0;
 		playerRigidbody2D = this.gameObject.DemandComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
-        spriteRenderer.color = originalColor;
+        thisController = this;
 	}
+
+    public void SetSprite(int LoadedLevel)
+    {
+        switch (LoadedLevel)
+        {
+            case 1:
+                spriteRenderer.sprite = Level1Sprite;
+                originalColor = Level1Color;
+                break;
+
+            case 2:
+                spriteRenderer.sprite = Level2Sprite;
+                originalColor = Level2Color;
+                break;
+
+            case 3:
+                spriteRenderer.sprite = Level3Sprite;
+                originalColor = Level3Color;
+                break;
+        }
+
+        spriteRenderer.color = originalColor;
+    }
 
     void Update()
     {

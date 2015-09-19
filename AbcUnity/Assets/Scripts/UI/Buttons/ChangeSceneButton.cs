@@ -2,9 +2,13 @@
 
 public class ChangeSceneButton : MonoBehaviour 
 {
-	public void ChangeScene(string sceneName)
+	public void ChangeScene(int LevelNumber)
 	{
+        if (LevelNumber > 0)
+        {
+            PlayArea.LoadedLevel = LevelNumber;
+        }
 		AudioSystem.Get().PlayUI();
-		Application.LoadLevel(sceneName);
+        Application.LoadLevel("GameplayScreen");
 	}
 }
